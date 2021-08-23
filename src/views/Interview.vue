@@ -1,14 +1,12 @@
 <template>
-  <div>
+  <v-container>
     <interview-params></interview-params>
-    <v-container>
-      <question-item
-        v-for="el of questionsData"
-        :key="el.id"
-        :questionData="el"
-      ></question-item>
-    </v-container>
-  </div>
+    <question-item
+      v-for="el of questionsData"
+      :key="el.id"
+      :questionData="el"
+    ></question-item>
+  </v-container>
 </template>
 
 <script>
