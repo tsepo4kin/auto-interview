@@ -1,5 +1,11 @@
 <template>
-  <div>HOME PAGE</div>
+  <v-container>
+    <v-row>
+      <v-col>
+        <h1>About auto interview</h1>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

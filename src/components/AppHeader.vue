@@ -1,6 +1,6 @@
 <template>
   <v-app-bar app color="primary" dark>
-    <router-link tag="div" to="/" class="d-flex align-center">
+    <v-btn to="/" class="d-flex align-center">
       <v-img
         alt="Interview Logo"
         class="shrink mr-2"
@@ -19,25 +19,19 @@
         width="100"
       />
       temp text
-    </router-link>
+    </v-btn>
 
     <v-spacer></v-spacer>
 
-    <router-link style="cursor: pointer" tag="v-btn" to="/interview" text>
+    <v-btn style="cursor: pointer" to="/interview" text>
       <span class="mr-2">Interview</span>
       <v-icon>mdi-open-in-new</v-icon>
-    </router-link>
+    </v-btn>
 
-    <router-link
-      class="mx-3"
-      style="cursor: pointer"
-      tag="v-btn"
-      to="/questionsList"
-      text
-    >
+    <v-btn class="mx-3" style="cursor: pointer" to="/questionsList" text>
       <span class="mr-2">All questions</span>
       <v-icon>mdi-open-in-new</v-icon>
-    </router-link>
+    </v-btn>
   </v-app-bar>
 </template>
 

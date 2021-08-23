@@ -1,7 +1,5 @@
 <template>
-  <v-container>
-    <div>question list</div>
-  </v-container>
+  <div>form params</div>
 </template>
 
 <script>
