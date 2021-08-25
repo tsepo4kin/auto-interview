@@ -1,11 +1,16 @@
 <template>
   <v-container>
-    <interview-params></interview-params>
-    <question-item
-      v-for="el of questionsData"
-      :key="el.id"
-      :questionData="el"
-    ></question-item>
+    <interview-params
+      v-if="loading"
+      @submitInterviewParams="filterQuestions"
+    ></interview-params>
+    <div v-else>
+      <question-item
+        v-for="el of filteredQuestions"
+        :key="el.id"
+        :questionData="el"
+      ></question-item>
+    </div>
   </v-container>
 </template>
 
@@ -18,6 +23,8 @@ export default {
     QuestionItem,
   },
   data: () => ({
+    filteredQuestions: [],
+    loading: true,
     questionsData: [
       {
         id: 1,
@@ -40,8 +47,45 @@ export default {
         title: "Всплытие и погружение событий",
         solution: "Как работает prevent, stopPropagation etc",
       },
+      {
+        id: 4,
+        type: "CSS",
+        difficulty: "2",
+        title: "CSS quest",
+        solution: "css",
+      },
+      {
+        id: 5,
+        type: "CSS hard",
+        difficulty: "3",
+        title: "css hard",
+        solution: "AddEventListener",
+      },
+      {
+        id: 6,
+        type: "HTML",
+        difficulty: "5",
+        title: "Всплытие и погружение событий",
+        solution: "Как работает prevent, stopPropagation etc",
+      },
     ],
   }),
+  methods: {
+    filterQuestions(e) {
+      this.filteredQuestions = this.questionsData.filter((question) => {
+        if (e.difficulty >= question.difficulty) {
+          e.type.forEach((elType) => {
+            if (elType == question.type) {
+              return true;
+            }
+          });
+        }
+      });
+      console.log(this.filteredQuestions);
+
+      this.loading = false;
+    },
+  },
 };
 </script>
 
