@@ -56,7 +56,7 @@ export default {
       },
       {
         id: 5,
-        type: "CSS hard",
+        type: "CSS",
         difficulty: "3",
         title: "css hard",
         solution: "AddEventListener",
@@ -73,15 +73,13 @@ export default {
   methods: {
     filterQuestions(e) {
       this.filteredQuestions = this.questionsData.filter((question) => {
-        if (e.difficulty >= question.difficulty) {
-          e.type.forEach((elType) => {
-            if (elType == question.type) {
-              return true;
-            }
-          });
+        if (
+          e.difficulty >= question.difficulty &&
+          e.type.includes(question.type)
+        ) {
+          return true;
         }
       });
-      console.log(this.filteredQuestions);
 
       this.loading = false;
     },

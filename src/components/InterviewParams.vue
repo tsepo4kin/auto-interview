@@ -45,7 +45,6 @@ export default {
   }),
   methods: {
     submitForm() {
-      console.log(this.count, this.difficulty, this.type);
       this.$emit("submitInterviewParams", {
         count: this.count,
         difficulty: this.difficulty,
