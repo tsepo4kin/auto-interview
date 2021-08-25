@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <interview-params
-      v-if="loading"
+      v-if="!filtered"
       @submitInterviewParams="filterQuestions"
     ></interview-params>
     <div v-else>
@@ -24,7 +24,7 @@ export default {
   },
   data: () => ({
     filteredQuestions: [],
-    loading: true,
+    filtered: false,
     questionsData: [
       {
         id: 1,
@@ -72,6 +72,7 @@ export default {
   }),
   methods: {
     filterQuestions(e) {
+      // filter by diff and type
       this.filteredQuestions = this.questionsData.filter((question) => {
         if (
           e.difficulty >= question.difficulty &&
@@ -80,8 +81,13 @@ export default {
           return true;
         }
       });
+      // random sort for limit count
+      this.filteredQuestions.sort(() => {
+        return Math.random() - 0.5;
+      });
+      this.filteredQuestions.length = e.count;
 
-      this.loading = false;
+      this.filtered = true;
     },
   },
 };

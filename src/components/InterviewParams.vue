@@ -1,37 +1,54 @@
 <template>
-  <v-row>
-    <v-col class="mx-auto" lg="4">
-      <v-form>
+  <v-form>
+    <v-row>
+      <v-col lg="2" class="ml-auto">
         <v-text-field
           label="Questions count"
           placeholder="10"
           v-model="count"
           outlined
+          hide-details="true"
           shaped
           type="number"
         ></v-text-field>
+      </v-col>
+      <v-col lg="2" class="mr-auto">
+        <v-select
+          :items="selectDifficulty"
+          v-model="difficulty"
+          outlined
+          hide-details="true"
+          shaped
+          label="Choose difficulty"
+        ></v-select>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col class="mx-auto" lg="4">
         <v-select
           :items="selectType"
           v-model="type"
-          dense
+          outlined
+          hide-details="true"
           solo
           label="Choose questions type"
           chips
           multiple
         ></v-select>
-        <v-select
-          :items="selectDifficulty"
-          v-model="difficulty"
-          dense
-          solo
-          label="Choose difficulty"
-        ></v-select>
-        <v-btn :disabled="isDisabled" @click="submitForm" color="primary"
-          >Start</v-btn
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col class="mx-auto" lg="4">
+        <v-btn
+          @click="submitForm"
+          :disabled="isDisabled"
+          color="primary"
+          style="width: 100%"
+          >Submit</v-btn
         >
-      </v-form>
-    </v-col>
-  </v-row>
+      </v-col>
+    </v-row>
+  </v-form>
 </template>
 
 <script>

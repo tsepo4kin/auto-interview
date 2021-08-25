@@ -1,6 +1,5 @@
 <template>
   <v-container>
-    <!-- filter -->
     <question-item
       v-for="question of questionsData"
       :key="question.id"
