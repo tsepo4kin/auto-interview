@@ -28,6 +28,18 @@
         </p>
       </v-col>
     </v-row>
+    <v-row>
+      <v-col lg="4" class="ml-auto">
+        <v-btn style="width: 100%" to="/interview" color="primary"
+          >Start interview</v-btn
+        >
+      </v-col>
+      <v-col lg="4" class="mr-auto">
+        <v-btn style="width: 100%" to="/questionsList" color="primary"
+          >Check all questions</v-btn
+        >
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
