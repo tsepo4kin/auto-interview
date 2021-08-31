@@ -3,10 +3,14 @@
     <v-card width="800px" class="mx-auto mt-2">
       <v-card-title>
         <h3>{{ questionData.title }}</h3>
-        <span>tech {{ questionData.type }}</span>
-        <span>difficulty {{ questionData.difficulty }}</span>
+        <v-chip class="ml-auto">{{ questionData.type }}</v-chip>
+        <span class="ml-4">{{ questionData.difficulty }}/5</span>
       </v-card-title>
-      <v-card-text v-if="showSolution">{{ questionData.solution }}</v-card-text>
+      <v-card-text v-if="showSolution" class="pb-0">
+        <h4>Answer</h4>
+        {{ questionData.solution }} <br />
+        <a :href="questionData.link" target="_blank">View more</a>
+      </v-card-text>
       <v-card-actions>
         <v-btn
           class="ml-auto"

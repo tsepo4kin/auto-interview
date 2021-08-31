@@ -1,18 +1,35 @@
 <template>
   <v-container>
-    <v-text-field placeholder="task name" v-model="taskName"></v-text-field>
-    <v-select
-      placeholder="task types"
-      multiple
-      chips
-      :items="selectType"
-      v-model="type"
-    ></v-select>
-    <v-select
-      placeholder="task difficulty"
-      :items="selectDifficulty"
-      v-model="difficulty"
-    ></v-select>
+    <v-form>
+      <v-row>
+        <v-col lg="7">
+          <v-text-field label="task name" v-model="taskName"></v-text-field>
+        </v-col>
+        <v-col lg="4">
+          <v-select
+            clearable
+            label="task types"
+            multiple
+            outlined
+            solo
+            dense
+            chips
+            :items="selectType"
+            v-model="type"
+          ></v-select>
+        </v-col>
+        <v-col lg="1">
+          <v-select
+            outlined
+            solo
+            dense
+            label="difficulty"
+            :items="selectDifficulty"
+            v-model="difficulty"
+          ></v-select>
+        </v-col>
+      </v-row>
+    </v-form>
     <question-item
       v-for="question of filteredTasks"
       :key="question.id"
@@ -40,6 +57,7 @@ export default {
         difficulty: "1",
         title: "Разница между let, var, const в JS",
         solution: "Область видимости и невозможность изменить const",
+        link: "https://developer.mozilla.org/ru/",
       },
       {
         id: 2,
@@ -47,6 +65,7 @@ export default {
         difficulty: "1",
         title: "Обработка событий в JS",
         solution: "AddEventListener",
+        link: "https://developer.mozilla.org/ru/",
       },
       {
         id: 3,
@@ -54,6 +73,7 @@ export default {
         difficulty: "1",
         title: "Всплытие и погружение событий",
         solution: "Как работает prevent, stopPropagation etc",
+        link: "https://developer.mozilla.org/ru/",
       },
       {
         id: 4,
@@ -61,6 +81,7 @@ export default {
         difficulty: "2",
         title: "CSS quest",
         solution: "css",
+        link: "https://developer.mozilla.org/ru/",
       },
       {
         id: 5,
@@ -68,6 +89,7 @@ export default {
         difficulty: "3",
         title: "css hard",
         solution: "AddEventListener",
+        link: "https://developer.mozilla.org/ru/",
       },
       {
         id: 6,
@@ -75,6 +97,7 @@ export default {
         difficulty: "5",
         title: "Всплытие и погружение событий",
         solution: "Как работает prevent, stopPropagation etc",
+        link: "https://developer.mozilla.org/ru/",
       },
     ],
   }),
@@ -94,14 +117,6 @@ export default {
       if (this.type) {
         result = result.filter((e) => this.type.includes(e.type));
       }
-      console.log(
-        {
-          taskName: this.taskName,
-          type: this.type,
-          difficulty: this.difficulty,
-        },
-        result
-      );
       return result;
     },
   },
