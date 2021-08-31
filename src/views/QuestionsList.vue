@@ -1,8 +1,18 @@
 <template>
   <v-container>
-    <v-text-field v-model="taskName"></v-text-field>
-    <v-select :items="selectType" v-model="type"></v-select>
-    <v-select :items="selectDifficulty" v-model="difficulty"></v-select>
+    <v-text-field placeholder="task name" v-model="taskName"></v-text-field>
+    <v-select
+      placeholder="task types"
+      multiple
+      chips
+      :items="selectType"
+      v-model="type"
+    ></v-select>
+    <v-select
+      placeholder="task difficulty"
+      :items="selectDifficulty"
+      v-model="difficulty"
+    ></v-select>
     <question-item
       v-for="question of filteredTasks"
       :key="question.id"
@@ -72,20 +82,26 @@ export default {
     filteredTasks() {
       let result = this.questionsData;
       if (this.taskName) {
-        result = this.questionsData.filter((e) =>
+        result = result.filter((e) =>
           e.title.toLowerCase().includes(this.taskName.toLowerCase())
         );
       }
 
       if (this.difficulty) {
-        result = this.questionsData.filter(
-          (e) => e.difficulty <= this.difficulty
-        );
+        result = result.filter((e) => e.difficulty <= this.difficulty);
       }
 
       if (this.type) {
-        result = this.questionsData.filter((e) => this.type.includes(e));
+        result = result.filter((e) => this.type.includes(e.type));
       }
+      console.log(
+        {
+          taskName: this.taskName,
+          type: this.type,
+          difficulty: this.difficulty,
+        },
+        result
+      );
       return result;
     },
   },
