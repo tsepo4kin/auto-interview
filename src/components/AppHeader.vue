@@ -1,24 +1,14 @@
 <template>
   <v-app-bar app color="primary" dark>
-    <v-btn to="/" class="d-flex align-center">
+    <v-btn to="/" class="d-flex align-center" text height="80">
       <v-img
         alt="Interview Logo"
         class="shrink mr-2"
         contain
-        src="logo"
+        src="../assets/autoInterviewLogo.png"
         transition="scale-transition"
-        width="40"
+        width="80"
       />
-
-      <v-img
-        alt="Vuetify Name"
-        class="shrink mt-1 hidden-sm-and-down"
-        contain
-        min-width="100"
-        src="Interview Logo text"
-        width="100"
-      />
-      temp text
     </v-btn>
 
     <v-spacer></v-spacer>
