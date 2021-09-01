@@ -40,6 +40,7 @@
 
 <script>
 import QuestionItem from "../components/QuestionItem.vue";
+import questionsData from "@/tasks.json";
 export default {
   components: {
     QuestionItem,
@@ -50,56 +51,7 @@ export default {
     type: null,
     selectDifficulty: [1, 2, 3, 4, 5],
     difficulty: null,
-    questionsData: [
-      {
-        id: 1,
-        type: "JS",
-        difficulty: "1",
-        title: "Разница между let, var, const в JS",
-        solution: "Область видимости и невозможность изменить const",
-        link: "https://developer.mozilla.org/ru/",
-      },
-      {
-        id: 2,
-        type: "JS",
-        difficulty: "1",
-        title: "Обработка событий в JS",
-        solution: "AddEventListener",
-        link: "https://developer.mozilla.org/ru/",
-      },
-      {
-        id: 3,
-        type: "JS",
-        difficulty: "1",
-        title: "Всплытие и погружение событий",
-        solution: "Как работает prevent, stopPropagation etc",
-        link: "https://developer.mozilla.org/ru/",
-      },
-      {
-        id: 4,
-        type: "CSS",
-        difficulty: "2",
-        title: "CSS quest",
-        solution: "css",
-        link: "https://developer.mozilla.org/ru/",
-      },
-      {
-        id: 5,
-        type: "CSS",
-        difficulty: "3",
-        title: "css hard",
-        solution: "AddEventListener",
-        link: "https://developer.mozilla.org/ru/",
-      },
-      {
-        id: 6,
-        type: "HTML",
-        difficulty: "5",
-        title: "Всплытие и погружение событий",
-        solution: "Как работает prevent, stopPropagation etc",
-        link: "https://developer.mozilla.org/ru/",
-      },
-    ],
+    questionsData: questionsData,
   }),
   computed: {
     filteredTasks() {
