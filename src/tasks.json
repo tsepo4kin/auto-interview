@@ -78,5 +78,85 @@
     "title": "Что такое IIFE?",
     "solution": "IIFE или Immediately Invoked Function Expression — это функция, которая вызывается или выполняется сразу же после создания или объявления. Для создания IIFE необходимо обернуть функцию в круглые скобки (оператор группировки), превратив ее в выражение, и затем вызвать ее с помощью еще одних круглых скобок. Это выглядит так: (function(){})().",
     "link": "https://developer.mozilla.org/ru/docs/Glossary/IIFE"
+  },
+  {
+    "id": "11",
+    "type": "JS",
+    "difficulty": "3",
+    "title": "Расскажите про bind, call, apply",
+    "solution": "Методы функций, который позволяют передать контекст вызова в нужную фунцию.",
+    "link": "['https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/bind', 'https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/apply', 'https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/call']"
+  },
+  {
+    "id": "12",
+    "type": "JS",
+    "difficulty": "5",
+    "title": "Как работает ассинхронность и EventLoop в JS ?",
+    "solution": "Полный механизм вызова функций и исполнения ассинхронного кода можно посмотреть по ссылке",
+    "link": "https://habr.com/ru/company/ruvds/blog/340508/"
+  },
+  {
+    "id": "13",
+    "type": "JS",
+    "difficulty": "3",
+    "title": "Расскажите про ключевое слово this",
+    "solution": "В большинстве случаев значение this определяется тем, каким образом вызвана функция. Значение this не может быть установлено путём присваивания во время исполнения кода и может иметь разное значение при каждом вызове функции. ",
+    "link": "['https://learn.javascript.ru/object-methods', 'https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this']"
+  },
+  {
+    "id": "14",
+    "type": "JS",
+    "difficulty": "2",
+    "title": "Расскажите про стрелочные функции в JS",
+    "solution": "Стрелочная функция — это относительно новый способ создания функций в JS. Стрелочные функции создаются быстрее и имеют более читаемый синтаксис, чем функциональные выражения. В стрелочных функциях опускается слово «function».У стрелочных функций нет доступа к объекту arguments.У стрелочных функций нет this. Если происходит обращение к this, его значение берётся снаружи.",
+    "link": "https://learn.javascript.ru/arrow-functions"
+  },
+  {
+    "id": "15",
+    "type": "JS",
+    "difficulty": "3",
+    "title": "Что такое классы в JS?",
+    "solution": "Классы — это относительно новый способ написания функций-конструкторов в JS. Это синтаксический сахар для функций-конструкторов. В основе классов лежат те же прототипы и прототипное наследование.",
+    "link": "['https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes', 'https://learn.javascript.ru/es-class']"
+  },
+  {
+    "id": "16",
+    "type": "JS",
+    "difficulty": "1",
+    "title": "Что такое деструктуризация?",
+    "solution": "Деструктуризация — относительно новый способ получения (извлечения) значений объекта или массива.",
+    "link": "https://learn.javascript.ru/destructuring"
+  },
+  {
+    "id": "17",
+    "type": "JS",
+    "difficulty": "1",
+    "title": "Что такое шаблонные литералы?",
+    "solution": "Шаблонные литералы — относительно новый способ создания строк в JS. Шаблонные литералы создаются с помощью двойных обратных кавычек (``).В шаблонных литералах нам не нужно экранировать одинарные кавычки; нам не нужно использовать управляющую последовательность \\n для перевода строки; нам не нужно использовать конкатенацию строк для объединения текста с переменной: мы можем использовать выражение ${variable} для получения значения переменной.",
+    "link": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Template_literals"
+  },
+  {
+    "id": "18",
+    "type": "JS",
+    "difficulty": "1",
+    "title": " Что такое объект Set?",
+    "solution": "Объект Set позволяет хранить уникальные значения, примитивы и ссылки на объекты. Еще раз: в Set можно добавлять только уникальные значения. Он проверяет хранящиеся в нем значения с помощью алгоритма SameZeroValue.",
+    "link": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Set"
+  },
+  {
+    "id": "19",
+    "type": "JS",
+    "difficulty": "1",
+    "title": "Что такое spread и rest операторы?",
+    "solution": "Операторы spread и rest имеют одинаковый синтаксис ('...'). Разница состоит в том, что с помощью spread мы передаем или распространяем данные массива на другие данные, а с помощью rest — получаем все параметры функции и помещаем их в массив (или извлекаем часть параметров).",
+    "link": "https://learn.javascript.ru/rest-parameters-spread-operator"
+  },
+  {
+    "id": "20",
+    "type": "JS",
+    "difficulty": "1",
+    "title": "Что такое NaN? Как проверить, является ли значение NaN?",
+    "solution": "NaN или Not A Number (не число) — это значение, получаемое в результате выполнения числовой операции над нечисловым значением.В JS есть встроенный метод isNaN, позволяющий проверять, является ли значение NaN",
+    "link": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/isNaN"
   }
 ]
